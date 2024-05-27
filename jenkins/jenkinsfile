@@ -1,0 +1,64 @@
+pipeline {
+
+    // specifies where the pipeline stages will be executed
+    agent {
+        kubernetes {
+            defaultContainer 'kaniko'
+        }
+    }
+
+    // environment variables
+    environment {
+        APP = "tech-test"
+        BRANCH = "master"
+    }
+
+    // scheduling pattern
+    triggers {
+        cron('H 08 * * *')
+    }
+
+    stages {
+        stage('Checkout Code') {
+            steps {
+                    git 'https://github.com/vinodkrane/cucumber-ts-bdd-tests.git'
+                }
+            }
+
+        stage("Build") {
+            steps {
+                    sh "docker build --tag ${APP} -f docker/Dockerfile ."
+                }
+            }
+
+        stage("Execute Test") {
+            when { branch 'main' }
+             steps {
+                    sh "docker run -it ${APP}:latest 'npm test'"
+            }
+        }
+
+        stage('Push docker image') {
+            when { branch 'main' }
+            steps {
+                dockerPush(env.APPLICATION)
+                sh "docker push ${APP}:latest"
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Pipeline execution finished!'
+            // Clean up workspace
+            deleteDir()
+        }
+        success {
+            // Send notification on success
+            mail to: 'team@example.com', color: 'good', subject: 'Pipeline Succeeded!'
+        }
+        failure {
+            // Send notification on failure
+            slackSend channel: '#test-room', color: 'danger', message: 'Pipeline Failed!'
+        }
+}

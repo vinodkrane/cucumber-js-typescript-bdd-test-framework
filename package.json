@@ -1,0 +1,29 @@
+{
+  "name": "Cucumber_Typescript",
+  "version": "1.0.0",
+  "description": "Example of TypeScript Cucumber-JS project",
+  "main": "index.ts",
+  "auther": "Vinod Rane",
+  "scripts": {
+    "test": "cucumber-js -f json:reports/cucumber_report.json --parallel 3",
+    "smokeTest": "cucumber-js -f json:reports/cucumber_report.json --tags @smoke",
+    "testScenario1": "cucumber-js features/features/scenario-1.feature --require features/features/step-definitions/scenario-1.steps.ts",
+    "testScenario2": "cucumber-js features/features/scenario-1.feature --require features/features/step-definitions/scenario-1.steps.ts",
+    "testScenario3": "cucumber-js features/features/scenario-1.feature --require features/features/step-definitions/scenario-1.steps.ts",
+    "testScenario4": "cucumber-js features/features/scenario-1.feature --require features/features/step-definitions/scenario-1.steps.ts",
+    "testScenario5": "cucumber-js features/features/scenario-1.feature --require features/features/step-definitions/scenario-1.steps.ts",
+    "testScenario6": "cucumber-js features/features/scenario-1.feature --require features/features/step-definitions/scenario-1.steps.ts",
+    "testScenario7": "cucumber-js features/features/scenario-1.feature --require features/features/step-definitions/scenario-1.steps.ts",
+    "generate:report": "node ./utils/report.ts"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "*",
+    "@types/chai": "^4.3.4",
+    "chai": "^4.3.7",
+    "ts-node": "^10.4.0"
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "cucumber-html-reporter": "^7.1.1"
+  }
+}

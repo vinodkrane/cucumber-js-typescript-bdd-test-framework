@@ -1,0 +1,392 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "api-response-status-code-and-response-time;verify-response-status-code-and-response-time",
+        "keyword": "Scenario",
+        "line": 11,
+        "name": "Verify response status code and response time",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I make a GET request to \"/api/RMSTest/ibltest\"",
+            "match": {
+              "location": "features\\step-definitions\\scenario-1.steps.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 697713899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "the status code should be 200",
+            "match": {
+              "location": "features\\step-definitions\\scenario-1.steps.ts:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1538300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "the response time should be less than 1000 milliseconds",
+            "match": {
+              "location": "features\\step-definitions\\scenario-1.steps.ts:28"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1434299
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@smoke",
+            "line": 3
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "api-response-status-code-and-response-time",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "API response status code and response time",
+    "tags": [],
+    "uri": "features\\features\\scenario-1.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "validate-the-'id'-and-'type'-fields-in-response-data;confirm-the-content-of-response-data",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Confirm the content of response data",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "a GET request is sent to \"/api/RMSTest/ibltest\"",
+            "match": {
+              "location": "features\\step-definitions\\scenario-2.steps.ts:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 643863100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "the \"id\" field within the data array should never be null or empty",
+            "match": {
+              "location": "features\\step-definitions\\scenario-2.steps.ts:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4635899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "every item in the data array should have the \"type\" field as \"episode\"",
+            "match": {
+              "location": "features\\step-definitions\\scenario-2.steps.ts:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3791799
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression",
+            "line": 3
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "validate-the-'id'-and-'type'-fields-in-response-data",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Validate the 'id' and 'type' fields in response data",
+    "tags": [],
+    "uri": "features\\features\\scenario-2.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "verify-that-the-title-field-in-episode-is-not-null-or-not-empty;verify-that-the-'title'-in-the-'episode'-is-never-null-or-empty",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Verify that the 'title' in the 'episode' is never null or empty",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I perform a GET request to \"/api/RMSTest/ibltest\"",
+            "match": {
+              "location": "features\\step-definitions\\scenario-3.steps.ts:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 672286599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "the 'title' in 'episode' is never null or empty for any schedule item",
+            "match": {
+              "location": "features\\step-definitions\\scenario-3.steps.ts:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5409900
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression",
+            "line": 3
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "verify-that-the-title-field-in-episode-is-not-null-or-not-empty",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Verify that the title field in episode is not null or not empty",
+    "tags": [],
+    "uri": "features\\features\\scenario-3.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "validate-'live'-field-in-response;verify-that-only-one-episode-in-the-list-has-'live'-field-as-true",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Verify that only one episode in the list has 'live' field as true",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "I execute a GET request to \"/api/RMSTest/ibltest\"",
+            "match": {
+              "location": "features\\step-definitions\\scenario-4.steps.ts:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 129818399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 5,
+            "name": "only one episode in the list should have the 'live' field set to true",
+            "match": {
+              "location": "features\\step-definitions\\scenario-4.steps.ts:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2371399
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "validate-'live'-field-in-response",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Validate 'live' field in response",
+    "tags": [],
+    "uri": "features\\features\\scenario-4.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "verify-transmission-start-and-end-dates;verify-that-the-transmission_start-date-value-is-before-transmission_end",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Verify that the transmission_start date value is before transmission_end",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "a GET request is made to \"/api/RMSTest/ibltest\"",
+            "match": {
+              "location": "features\\step-definitions\\scenario-5.steps.ts:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 140673299
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 5,
+            "name": "the \"transmission_start\" date value is before the \"transmission_end\" date for each element",
+            "match": {
+              "location": "features\\step-definitions\\scenario-5.steps.ts:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 18409799
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "verify-transmission-start-and-end-dates",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Verify transmission start and end dates",
+    "tags": [],
+    "uri": "features\\features\\scenario-5.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "validate-response-header;verify-the-\"date\"-value-in-the-response-headers",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Verify the \"Date\" value in the response headers",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "a GET request is executed \"/api/RMSTest/ibltest\"",
+            "match": {
+              "location": "features\\step-definitions\\scenario-6.steps.ts:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 140888699
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 5,
+            "name": "the response header \"Date\" should have a valid date",
+            "match": {
+              "location": "features\\step-definitions\\scenario-6.steps.ts:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3065900
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "validate-response-header",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Validate response header",
+    "tags": [],
+    "uri": "features\\features\\scenario-6.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "validate-response-for-the-resource-which-does-not-exist;verify-that-if-resource-does-not-exist-should-returns-a-404-status-code",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "Verify that if resource does not exist should returns a 404 status code",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "An API call is made using the GET method to \"/api/RMSTest/ibltest/2023-09-11\"",
+            "match": {
+              "location": "features\\step-definitions\\scenario-7.steps.ts:8"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 118889500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 5,
+            "name": "the response status code should be 404",
+            "match": {
+              "location": "features\\step-definitions\\scenario-7.steps.ts:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 716800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "the response should have an error object with properties 'details' and 'http_response_code'",
+            "match": {
+              "location": "features\\step-definitions\\scenario-7.steps.ts:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1817000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "validate-response-for-the-resource-which-does-not-exist",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Validate response for the resource which does not exist",
+    "tags": [],
+    "uri": "features\\features\\scenario-7.feature"
+  }
+]
