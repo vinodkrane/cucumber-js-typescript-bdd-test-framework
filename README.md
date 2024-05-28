@@ -123,11 +123,11 @@ bbc
 # Manual tests
 
 ## Test Case 1: Scenario: Verify required fields and the structure of the API response.
-GIVEN: The request is sent to https://testapi.io/api/RMSTest/ibltest endpoint.
-THEN: channel should have non-null and non-empty 'id', 'type' and 'title' fields.
-THEN: there should be five scheduled programmes in the response.
-THEN: Each programme should have non-null and non-empty 'id' and 'title' fields.
-THEN: Each programme should have 'transmission_start' and 'transmission_end' fields in valid date format.
+- GIVEN: The request is sent to https://testapi.io/api/RMSTest/ibltest endpoint.
+- THEN: channel should have non-null and non-empty 'id', 'type' and 'title' fields.
+- THEN: there should be five scheduled programmes in the response.
+- THEN: Each programme should have non-null and non-empty 'id' and 'title' fields.
+- THEN: Each programme should have 'transmission_start' and 'transmission_end' fields in valid date format.
 
 ## Scenario 2: Verify schedule duration-text
 - GIVEN: a successful GET request is made to https://testapi.io/api/RMSTest/ibltest endpoint.
