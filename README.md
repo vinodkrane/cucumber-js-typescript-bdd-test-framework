@@ -129,10 +129,16 @@ bbc
 - THEN: Each programme should have non-null and non-empty 'id' and 'title' fields.
 - THEN: Each programme should have 'transmission_start' and 'transmission_end' fields in valid date format.
 
-## Scenario 2: Verify schedule duration-text
+## Test Case 2: Verify episode details
+- GIVEN: The API endpoint is set to "https://testapi.io/api/RMSTest/ibltest"
+- THEN: the episode availability start and end dates are not null and empty.
+- THEN: the episode availability end date should be later than start date.
+- THEN: the scheduled_end datetime of an element should match the  scheduled_start datetime of the next element.
+- THEN: the transmission_end datetime of an element should match the  transmission_start datetime of the next element.
+- THEN: the episode's "first_broadcast_date_time" should match the episode block's "transmission_start" datetime
+- THEN: the response should contain only one episod marked as "live"
+- THEN: the availability information should include a start date and end date
+
+## Scenario 3: Verify schedule duration-text
 - GIVEN: a successful GET request is made to https://testapi.io/api/RMSTest/ibltest endpoint.
 - THEN: difference of scheduled_start and scheduled_end times matches the duration-text.
-
-## Test Case 3: Verify episode details
-- GIVEN: The API endpoint is set to "https://testapi.io/api/RMSTest/ibltest"
-- THEN: The response should contain only one episod marked as "live"
