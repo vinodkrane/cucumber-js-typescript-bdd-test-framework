@@ -9,7 +9,7 @@ pipeline {
 
     // environment variables
     environment {
-        APP = "tech-test"
+        APP = "api-test"
         BRANCH = "master"
     }
 
@@ -21,7 +21,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                    git 'https://github.com/vinodkrane/cucumber-ts-bdd-tests.git'
+                    git 'https://github.com/vinodkrane/cucumber-js-typescript-bdd-test-framework'
                 }
             }
 
